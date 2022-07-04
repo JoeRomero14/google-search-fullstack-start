@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
   res.render('search')
 })
 app.get('/results', (req, res) => {
-  res.send('This is the Results Page')
+  res.render('results')
 })
 
 // Create route for results
