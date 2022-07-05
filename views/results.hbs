@@ -1,101 +1,26 @@
-<body>
-	<nav>
+<nav>
 		<img class="immy" src="img/google.png" alt="google" />
 		<form>
 			<input class= type="search"/>
 			<button>Search</button>
 		</form>
 	</nav>
-	<span class="results">37 results</span>
+	<span class="results">{{results.length}} results</span>
+{{#each results as |e|}}
 	<div class="web3">
-		<small>www.w3school.com</small>
+		<small>{{e.url}}</small>
 	</div>
 	<h2>
-		<a href="https://www.w3schools.com/js/">
-			JavaScript Tutorial - W3School</a
-		>
-	</h2>
-	<p>
-		Well organized and easy to understand web building tutorials with lots of
-		examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python, Bootstrap,
-		Java
-	</p>
+		<a href={{e.url}}>
+			{{e.title}}</a>
+	 </h2>
+	<p>{{e.description}}</p>
 	<div class="lines">
 		<ul>
-			<li>
-				<a href="https://www.w3schools.com/js/js_intro.asp">
-					JavaScript Introduction</a
-				>
+			{{#each e.links as |a|}}
+			<li><a href="{{a.url}}">{{a.title}}</a>
 			</li>
-			<li>
-				<a href="https://www.w3schools.com/js/js_functions.asp">
-					JS Functions</a
-				>
-			</li>
-			<li>
-				<a href="https://www.w3schools.com/js/js_examples.asp">
-					JavaScript Examples</a
-				>
-			</li>
+{{/each}}
 		</ul>
-	</div class="mo">
-	<small> developer.mozilla.org </small>
-	<h2>
-		<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-			JavaScript MDN</a>
-	</h2>
-	<p>
-		JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled
-		programming language with first-class functions. While it is most
-		well-known as the scripting language for Web pages, many non-browser
-		environments also use it, such as Node.js, Apache CouchDB and Adobe
-		Acrobat.
-	</p>
-</ul>
-	<ul>
-		<li>
-			<a
-				href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators"
-			>
-				JavaScript Operator</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI"
-			>
-				JavaScript Code</a
-			>
-		</li>
-		<li>
-			<a
-				href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks"
-			>
-				JavaScript Meaning</a
-			>
-		</li>
-	</ul>
-
-	<div class = "wiki"> <small> en.wikipedia.org </small>
 	</div>
-	<h2>
-		<a href="http s://en.wikipedia.org/wiki/JavaScript">
-			JavaScript - Wikipedia</a
-		>
-	</h2>
-	<p>
-		JavaScript often abbreviated as JS, is a programming language that
-		conforms to the ECMAScript specifiction. JavaScript is high-level, often
-		just-in-time.
-	</p>
-	<ul>
-		<li>
-			<a href="https://playcode.io/javascript-online"> JavaScript Online</a>
-		</li>
-		<li>
-			<a href="https://simple.wikipedia.org/wiki/JavaScript#Frameworks">
-				JavaScript Definition</a
-			>
-		</li>
-	</ul>
-</body>
+	{{/each}}
