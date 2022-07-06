@@ -7,20 +7,5 @@
 	</nav>
 	<span class="results">{{results.length}} results</span>
 {{#each results as |e|}}
-	<div class="web3">
-		<small>{{e.url}}</small>
-	</div>
-	<h2>
-		<a href={{e.url}}>
-			{{e.title}}</a>
-	 </h2>
-	<p>{{e.description}}</p>
-	<div class="lines">
-		<ul>
-			{{#each e.links as |a|}}
-			<li><a href="{{a.url}}">{{a.title}}</a>
-			</li>
-{{/each}}
-		</ul>
-	</div>
+	{{>result e = e}}
 	{{/each}}
