@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 // Create POST controller
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   let results = [
     {
       title: 'JS tutorials',
@@ -50,7 +50,13 @@ router.get('/', (req, res) => {
       ]
     }
   ]
+  results = results.filter(e => {
+    return e.description.includes(req.body.thebunnyrabbit)
+  })
+  // [{}, {}]
   res.render('results', { results })
-  // Export module
 })
+
+// Export module
+
 module.exports = router
